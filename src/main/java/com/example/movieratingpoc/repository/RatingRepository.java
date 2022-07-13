@@ -15,6 +15,7 @@ public interface RatingRepository extends JpaRepository<Rating,Integer> {
     @Query(value = "select * from rating where movie_id=?1",nativeQuery = true)
     public List<Rating> getAllMoviesByMovieId(int movieId);
 
-    public List<Rating> findByMovie(Movie movie);
+    @Query(value = "select avg(rating) from rating where movie_id=?1",nativeQuery = true)
+    public int findMovieRating(int movieId);
 
 }

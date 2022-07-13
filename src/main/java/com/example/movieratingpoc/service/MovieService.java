@@ -92,4 +92,8 @@ public class MovieService {
         }
 
     }
+
+    public int getMovieRating(int movieId) {
+        return ratingRepository.findMovieRating(movieId);
+    }
 }

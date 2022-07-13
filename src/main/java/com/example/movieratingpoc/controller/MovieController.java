@@ -86,4 +86,13 @@ public class MovieController {
             return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    @GetMapping("/rate/movie/{movieId}")
+    private ResponseEntity<ApiResponse> getMovieRating(@PathVariable("movieId") int movieId) {
+        try {
+            int serviceResponse = movieService.getMovieRating(movieId);
+            return new ResponseEntity("The average rating is "+serviceResponse, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
