@@ -21,7 +21,6 @@ public class MyConfig extends WebSecurityConfigurerAdapter {
         return new UserDetailsServiceImp();
     }
 
-
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -37,7 +36,6 @@ public class MyConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
         auth.authenticationProvider(authenticationProvider());
     }
 

@@ -21,12 +21,12 @@ import java.util.stream.Stream;
 public class MovieService {
 
    @Autowired
-   MovieRepository movieRepository;
+   private  MovieRepository movieRepository;
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
-    RatingRepository ratingRepository;
+    private RatingRepository ratingRepository;
 
     public Movie addMovie(MovieDTO movie) {
         ModelMapper modelMapper = new ModelMapper();
